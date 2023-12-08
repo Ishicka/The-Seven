@@ -11,7 +11,6 @@ The aim of the project is to provide an analysis of the trends and factors influ
 - Data set - Zillow
 -  Data Cleaning and Preprocessing - This include handling missing values, addressing outliers and ensuring data consistency
 -  Exploratory Data Analysis(EDA)-  Visualization such as time seriesplots, heatmaps and geographical maps will be employed to highlight trends and states variations.
--  Predictive Modeling - Regression Analysis will be used to forecast future mortgage delinquency rates and assess the probability of foreclosure
 -  Conclusion - project will be concluded with key findings and insights devoled from the analysis
 
 
