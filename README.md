@@ -1,19 +1,17 @@
-# Mortgage Delinquency rate and Foreclosures: Five Year Analysis
+#Analyzing House Prices and External Factors affecting affordability
 
 ## Project Overview
-The aim of the project is to provide an analysis of the trends and factors influencing mortgage delinquency rates and foreclosures between 2019-2023. 
+The aim of the project is to provide an analysis of the trends and factors influencing house pricing and affordability. 
 
 ## Objectives
-- Analyze Historical mortgage data to identify patterns and trends in delinquency rates and foreclosures
-- Evaluate the impact of economic  factors(unemployment,interest rates) on mortgage delinquency
-- Develop a predictive model to forecast future delinquency rate and assess foreclosure risk
+- Analyze Historical House Price to identify patterns and trends .
+- Define affordability index that consider not only house prices but also income levels and unemployment rate
 
 ## Project Outline
-- Data set - https://fred.stlouisfed.org/series/DRSFRMACBS, https://www.consumerfinance.gov/data-research/mortgage-performance-trends/mortgages-30-89-days-delinquent/
+- Data set - 
 -  Data Cleaning and Preprocessing - This include handling missing values, addressing outliers and ensuring data consistency
 -  Exploratory Data Analysis(EDA)-  Visualization such as time seriesplots, heatmaps and geographical maps will be employed to highlight trends and states variations.
 -  Predictive Modeling - Regression Analysis will be used to forecast future mortgage delinquency rates and assess the probability of foreclosure
--  Risk factor Analysis - Identify the key risk factors contributing to the mortgage delinquency rate and foreclosures.
 -  Conclusion - project will be concluded with key findings and insights devoled from the analysis
 
 
