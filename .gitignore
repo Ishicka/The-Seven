@@ -1,1 +1,7 @@
 *.DS_Store
+old data/
+old code/
+api_keys.py
+resources/
+resource backup 2023-12-16T08-11/
+__pycache__/
