@@ -1,4 +1,4 @@
-Date,Name,State,MedianSalePrice,Year,MedianListPrice,SalesTotal,Total Population,Total Labor Force,Unemployed Labor Force,Median Income,MORTGAGE30US,Unemployment Rate,HAI
+Date,CityName,StateName,MedianSalePrice,Year,MedianListPrice,SalesTotal,Total Population,Total Labor Force,Unemployed Labor Force,Median Income,MORTGAGE30US,Unemployment Rate,HAI
 2008-07-31,United States,,185000.0,2008,,308096.0,,,,,6.52,,
 2008-07-31,New York,NY,410000.0,2008,,13753.0,,,,,6.52,,
 2008-07-31,Los Angeles,CA,420000.0,2008,,8253.0,,,,,6.52,,
