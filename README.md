@@ -34,8 +34,12 @@ Housing prices typically exhibit nonlinear connections owing to the effects of v
 •	Housing prices are influenced by a multitude of economic indicators. These indicators use in our Analysis was Mortgage Rates and Unemployment 
 •	Interest rates, for example, can have a nonlinear impact on housing prices. Initially, lower interest rates may stimulate demand and increase prices, but excessively low rates may lead to economic instability, affecting housing prices in unexpected ways.
 
+# Housing Affordability Index
+
 # Median List Price and Median Sale Price Analysis
 Housing prices are greatly influenced by the balance between supply and demand. To get an understanding of this Dynamic Housing market we completed different analyses. 
+
+# Outlier 
 
 # Price Distribution – Kernel Density distribution map 
 
@@ -57,16 +61,19 @@ Variability refers to the extent to which data points in a dataset differ from e
 # Trend Analysis
 
  
+![Median Sales Prices_plot](https://github.com/Ishicka/The-Seven/assets/148410176/a4377d01-bbd4-46b4-b00c-723d08328f1f)
 
 
- 
 
-\
+The plot reviews the Median list price versus the Median sale price for California ,Texas and Kansas.  There is an upward trend in both the sales and listing price for each state being reviewed. Specifically in California the plot reflects that buyers are paying less than the Median list price hence, the time period being analyzed draws the conclusion that they are in the buyers market.Buyer's market means that the demand for houses are less than the actual supply which creates negotiation power. Kansas on the other hand shows a multiple overlaps in 2021 and 2022 reflecting a possible shift in the market from buyers to sellers’ market .
 
 
 
 
 # Correlation Analysis:
+
+![Scatter Plot of MLP vs MSP_plot](https://github.com/Ishicka/The-Seven/assets/148410176/f7d15490-e17e-4d92-be31-4a0e1f419cfb)
+
  
 •	Linear Regression: y = 0.79x + 12647.59
 •	Correlation Coefficient: 0.96
@@ -75,6 +82,8 @@ Variability refers to the extent to which data points in a dataset differ from e
 •	It's important to note that correlation does not imply causation. While there may be a strong statistical relationship between these two variables, other factors could influence both list and sale prices independently. 
 
 Economic Factors
+
+
 
 
 # Next Steps:
