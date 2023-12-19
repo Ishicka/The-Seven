@@ -23,6 +23,13 @@ The following chart shows the HAI in New York, Los Angeles, Houston, Chicago, an
 
 The next visualization shows a linear regression of the number of homes sold and HAI across all cities and times in the data set. There appears to be a slight inverse relationship between population and HAI, but the correlation is weak (R^2 value is .06). From this it is assumed that there is a weak relationship between HAI and the number of homes sold, which represents the overall state of the market. Therefore, HAI is not an accurate predictor of market activity.
 
+![Average Housing Affordability by State in 2022](https://github.com/Ishicka/The-Seven/assets/102836930/b4ddc915-ba6a-4799-8065-84c3004a6cea)
+
+![Housing Affordability Index Over Time for Top 5 Cities by Population](https://github.com/Ishicka/The-Seven/assets/102836930/dcf310ca-ba92-46d6-8988-2d5b1488c882)
+
+![Linear Regression of Housing Affordability Index vs Total Sales](https://github.com/Ishicka/The-Seven/assets/102836930/0c905f88-1542-428a-8f77-f0c1a7f0bcc0)
+
+
 ## MLP & MSP
 When a house is put on the market, the price it is initially listed as and its final selling price are often different. These are referred to as the Median List Price (MLP) and Median Sales Price (MSP) when discussing the housing market of a particular area. When there is a trend of homes selling below asking price, it can be assumed that they are in a “Buyer’s Market,” meaning the supply of homes outweighs the demand. A “Seller’s Market” is the reverse, where there are not enough homes to meet demand and buyers must compete over the same properties.
 Analyzing the Housing  market using median list price and median sale price involves exploring various aspects of the data. Using the classic supply-and-demand model, demand refers to the MSP, as it signifies the willingness of buyers to pay for housing. Supply corresponds to the MLP as it reflects the availability of housing stock in the U.S. market. In a seller's market with high demand and limited supply, sellers may list properties at a lower price to attract multiple offers, leading to a higher sale price. In a buyer's market with ample supply and low demand, sellers may initially list properties at higher prices, but due to the competitive nature of the market, they may have to reduce prices to close a deal.
