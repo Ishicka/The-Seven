@@ -40,6 +40,8 @@ Housing prices typically exhibit nonlinear connections owing to the effects of v
 Housing prices are greatly influenced by the balance between supply and demand. To get an understanding of this Dynamic Housing market we completed different analyses. 
 
 # Outlier 
+![Boxplot Outliers_plot](https://github.com/Ishicka/The-Seven/assets/148410176/5383b42c-c602-4d23-adb3-305ac12d3d80)
+
 
 # Price Distribution – Kernel Density distribution map 
 
@@ -60,7 +62,6 @@ For Median Sale Price:
 The standard deviation is lower in both variables which suggests less variability in the data. This Basically means the data points are more clustered around the average value. When the standard deviation is lower, it means that the values in the data set are closer to the mean (average) and there is less spread around the mean. 
 Variability refers to the extent to which data points in a dataset differ from each other or from the average (mean) value. In statistics, variability is a measure of the spread, dispersion, or range of a set of values. It provides information about how much individual data points deviate from the central tendency of the data.
 
-<img width="417" alt="Screenshot 2023-12-18 214227" src="https://github.com/Ishicka/The-Seven/assets/52751074/a905f84e-1ac8-46af-8f84-1d5b7381ccb0">
 
 
 # Trend Analysis
@@ -86,10 +87,15 @@ The plot reviews the Median list price versus the Median sale price for Californ
 •	This correlation is often observed in real estate markets. When sellers perceive that the market is strong and property values are high, they may list their homes at higher prices. If buyers are willing to pay those prices, it results in higher median sale prices. Conversely, in a weaker market, sellers may be more inclined to lower their list prices, leading to lower median sale prices.
 •	It's important to note that correlation does not imply causation. While there may be a strong statistical relationship between these two variables, other factors could influence both list and sale prices independently. 
 
-Economic Factors
+# Economic Factors
+![image](https://github.com/Ishicka/The-Seven/assets/148410176/bce3d5d4-8935-48ef-b77e-52f651b2bd84)
 
 
 
+
+The initial analysis indicates a modest correlation between HAI and overall housing market trends, with a particular focus on the relationship between home sales volume and various economic factors. Notably, housing prices are influenced by a range of economic indicators such as inflation, employment rates, GDP growth, and consumer confidence, with interest rates playing a complex role. An inverse relationship between home sales and mortgage interest rates is observed, highlighting that while lower interest rates can boost demand and prices, too low rates may lead to economic instability and unpredictably impact housing prices. Historical events, including the 2008 Housing Bubble and its aftermath, the post-recession recovery efforts, and the recent COVID-19 pandemic, have significantly influenced the market. These events demonstrate the housing market's sensitivity to broader economic and policy changes. Despite some correlations, as shown in the data, the housing market's complexity and the multitude of influencing factors make it challenging to predict trends reliably.
+
+#Overall Points 
 
 # Next Steps:
 Potential next steps for the project include:
