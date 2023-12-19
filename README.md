@@ -1,113 +1,63 @@
-# Project Title: Analyzing the Housing Market and Economic factors. 
-#  Project Goals:
-The primary goal of this project is to analyze the housing market, focusing on the Affordability Index, median sale price (demand), and median list price (supply). Additionally, economic factors such as mortgage interest rates and unemployment rates will be considered. The project aims to provide insights into the current state of the housing market and understand the relationship between affordability, demand, and supply, considering economic factors.
+# Project Title: Analyzing the Housing Market and Economic factors
+# Project Goals
+The goal of this project is to explore housing markets in the United States through the lens of housing affordability and economic measures. Metrics to represent the state of the housing market are median house prices (including list and sales price) and number of homes sold. Economic factors include median household income, unemployment, and the national mortgage interest rate set by Freddie Mac. The datasets will also be confined to the period between 2009 and 2022 and were by metropolitan area. The specific questions to be addressed are the following:
 
-#  Industry Relevance:
-This project is essential in the real estate industry as it addresses critical factors influencing the housing market. Stakeholders, including real estate agents, buyers, sellers, and policymakers, can benefit from understanding market trends and factors affecting housing affordability.
+What does housing affordability look like in the US?
+How significantly does the price of a home change from list price to sale price?
+What relationships exist between markers of economic performance and number of homes sold?
 
-#  Data Collection and Exploration:
-Data Source: The project utilizes a combination of public datasets, including median list price and median sale price, mortgage interest rates, and unemployment rates.
-Data Selection Rationale: The chosen datasets provide comprehensive information on housing market dynamics and economic factors, allowing for a holistic analysis.
-Collection Process: Data was obtained from reputable sources such as Zillow, US Census and Freddie Mac website.
-# Data preprocessing
-The dataset contains monthly data from 2008 to 2023. The dataset contains multiple variables which include essential economic indicators and market data relevant for understanding housing market dynamics. The diverse sources from which the variables were obtained, the data preparation process involved merging the information based on their corresponding date columns The data pre-processing phase involved several stages, including the treatment of missing values (“NaN”).  
-The Linear interpolation method:
-The Linear interpolation method was used to address missing value by estimating the value of a function between two known values. This technique assumes that the relationship between the two known values is linear, meaning that it follows a straight line. The formula essentially finds the slope between the two points and uses it to estimate the value at the desired point x.
+# Industry Relevance
+The housing market is closely linked to the economy as it has contributed roughly 12% of the GDP for the last five years. This makes it the current largest contributor to the economy, almost tied with manufacturing at 11%. As such, analysis of the housing market affects people at all levels from the homeowners to policy makers and real estate professionals. Housing affordability and the size of the difference between the listing price and final sales price can both illustrate the volatility of the housing market. A more stable housing market is a factor in overall economic growth as it encourages more people to become homeowners. Of course, there are more variables that influence a person’s ability to make such a large investment, such as levels of income, unemployment, and interest rates. Breaking down some of these factors for individual analysis may help understand and even predict the market
 
-# Addressing outliers:
-The interquartile range (IQR) method was employed to detect outliers in the dataset. For each feature in the dataset, the IQR was calculated separately, thus allowing the lower and upper bounds of the outliers for each feature to be determined. Based on the determination the outliers were kept in the Analysis because it provides valuable insights.
+# Data Collection and Cleaning
+Data for the median income and unemployment levels was sourced from the US Census API while information regarding housing was pulled from the Zillow API. A challenge that presented itself early on was choosing what metrics would represent the economy most efficiently. Cleaning the data and merging it into one dataset also proved to be difficult. The dataset contains many variables represented throughout time on a yearly basis, but many metropolitan areas did not have information for all variables at all times. Names or ways of identifying the same variable were inconsistent across data sources. For example, the names of the cities in the US Census API are written differently from how they are represented with Zillow. Those names were changed in order to create a column to merge data. A linear interpolation to the data was used to account for missing values in median sale price and median list price data sets. Number of homes sold and median income were not adjusted as they were the most complete. The mortgage rates used in this project are calculated monthly by the Federal Home Loan Mortgage Corporation, or Freddie Mac.
 
-# Project Approach:
+# Project Approach
 The analysis involves statistical methods and data visualization techniques to present trends and relationships. Python libraries like Pandas, NumPy, and Matplotlib/Seaborn were employed for data manipulation and visualization. Regression analysis was used to model the relationship between housing metrics and economic factors.
 
-# Results/Conclusions:
-The Analysis was divided into 3 sections to answer the following questions:
--	What does housing affordability look like in the US?
--	How significantly does the price of a home change from list price to sale price?
--	What relationships exist between markers of economic performance and number of homes sold?
-Housing prices typically exhibit nonlinear connections owing to the effects of various economic indicators.
-1.	Nonlinear Connections:
-•	Nonlinearity implies that the relationship between housing prices and economic indicators is not proportional or straightforward. Changes in economic indicators may not result in linear changes in housing prices. Instead, the connection may be characterized by curves, thresholds, or other non-linear patterns.
-2.	Complex Dynamics:
-•	The housing market is influenced by a complex interplay of supply and demand dynamics, investor behavior, government policies, and global economic trends. These factors can create intricate and nonlinear relationships.
-3.	Effects of Various Economic Indicators:
-•	Housing prices are influenced by a multitude of economic indicators. These indicators use in our Analysis was Mortgage Rates and Unemployment 
-•	Interest rates, for example, can have a nonlinear impact on housing prices. Initially, lower interest rates may stimulate demand and increase prices, but excessively low rates may lead to economic instability, affecting housing prices in unexpected ways.
+# Data and Analysis
 
-# Housing Affordability Index
+## Affordability
+The first area to be explored is the state of affordable housing today across the US. The Housing Affordability Index (HAI) arose as shorthand for how likely a typical family would be able to afford the average mortgage in their area. HAI is calculated by dividing the Mean Family Income (MFI) by the Qualifying Income (QI) and multiplying that by 100. The QI is a tool used to evaluate mortgage loan applications and estimates how much income is required to afford a standard mortgage. If the QI and the MFI are equal, that suggests the typical family can afford to pay one complete mortgage (an HAI index of 100). As the MFI decreases relative to the QI, a family would only be able to afford to partially pay the mortgage. The lower this number is, the less affordable a market is considered (an HAI of < 100). Conversely, an MFI greater than QI suggests that a single family could afford to pay for their mortgage and then some, implying a healthy economy (an HAI > 100).
+The following chart shows the HAI in New York, Los Angeles, Houston, Chicago, and Dallas from 2011 through 2022. The graph shows there was a general downwards trend in HAI throughout the country.  A spike in affordability is seen in 2012 through 2014, around the same time the government rolled out post-recession relief programs. Similarly, when the interest rate decreased due to the COVID-19 pandemic, HAI increased. This graph also illustrates that the HAI of New York and Los Angeles remains low and relatively consistent while Chicago, Dallas, and Houston tend to be relatively high, indicating that a high demand for housing may inversely correlate with the HAI.
 
-# Median List Price and Median Sale Price Analysis
-Housing prices are greatly influenced by the balance between supply and demand. To get an understanding of this Dynamic Housing market we completed different analyses. 
+The next visualization shows a linear regression of the number of homes sold and HAI across all cities and times in the data set. There appears to be a slight inverse relationship between population and HAI, but the correlation is weak (R^2 value is .06). From this it is assumed that there is a weak relationship between HAI and the number of homes sold, which represents the overall state of the market. Therefore, HAI is not an accurate predictor of market activity.
 
-# Outlier 
+## MLP & MSP
+When a house is put on the market, the price it is initially listed as and its final selling price are often different. These are referred to as the Median List Price (MLP) and Median Sales Price (MSP) when discussing the housing market of a particular area. When there is a trend of homes selling below asking price, it can be assumed that they are in a “Buyer’s Market,” meaning the supply of homes outweighs the demand. A “Seller’s Market” is the reverse, where there are not enough homes to meet demand and buyers must compete over the same properties.
+Analyzing the Housing  market using median list price and median sale price involves exploring various aspects of the data. Using the classic supply-and-demand model, demand refers to the MSP, as it signifies the willingness of buyers to pay for housing. Supply corresponds to the MLP as it reflects the availability of housing stock in the U.S. market. In a seller's market with high demand and limited supply, sellers may list properties at a lower price to attract multiple offers, leading to a higher sale price. In a buyer's market with ample supply and low demand, sellers may initially list properties at higher prices, but due to the competitive nature of the market, they may have to reduce prices to close a deal.
+
+For the MLP in our dataset, the average price was $278,590.74 and the standard deviation was $174,552.93. The standard deviation measures the amount of variation or dispersion in a set of values. In this context, it indicates how spread out the Median List Prices are around the mean. For the MSP, the average price was $236,321.50 and the standard deviation of the dataset was $141,586.75. The standard deviation is lower in both variables, which suggests less variability in the data and more values similar to the mean. Furthermore, the interquartile range (IQR) method was employed to detect outliers in the dataset. For each feature in the dataset, the IQR was calculated separately, thus allowing the lower and upper bounds of the outliers for each feature to be determined. Based on the determination the outliers were kept in the dataset because it provides valuable insights.
+
 ![Boxplot Outliers_plot](https://github.com/Ishicka/The-Seven/assets/148410176/5383b42c-c602-4d23-adb3-305ac12d3d80)
 
+Box plots visually represent the distribution of data and identify outliers. Outliers are the points that fall beyond the "whiskers" of the box plot. Based on the context of our study, the nature of the data, and the goals of your analysis keeping the outliers is beneficial as they essential for understanding the phenomena being studied. A sample of the outlier was reviewed and it was concluded that while some regions have higher prices (e.g. California) that appear as outliers compared to the national data, they are consistent within their region. Therefore, they still add value to the analysis and were concluded in the dataset.
 
-Box plots visually represent the distribution of data and identify outliers. Outliers are the points that fall beyond the "whiskers" of the box plot. Based on the context of our study, the nature of the data, and the goals of your analysis keeping the outliers is beneficial as they essential for understanding the phenomena being studied. A sample of the outlier was reviewed and all the regions listed are expected to have higher house Prices
-
-
-
-
-# Price Distribution – Kernel Density Distribution
-
- 
-
-The overlaid plot shows the distributions of the median sale price (in blue) and the median list price (in orange) within the same graph. This visualization allows for a direct comparison between the two distributions, highlighting similarities and differences in their frequency and range.
+The overlaid plot (see below) shows the distributions of the median sale price (in blue) and the median list price (in orange) within the same graph. This visualization allows for a direct comparison between the two distributions, highlighting similarities and differences in their frequency and range.
 
 <img width="418" alt="Screenshot 2023-12-18 213036" src="https://github.com/Ishicka/The-Seven/assets/52751074/b1e3ffa4-f45c-443a-baa0-b4ce1ab8f6a2">
 
-
-The summary statistics you provided represent the central tendency (mean) and variability (standard deviation) of Median List Price and Median Sale Price. 
-For Median List Price:
-•	Mean (Average): $278,590.74
-•	Standard Deviation: $174,552.93
-For Median Sale Price:
-•	Mean (Average): $236,321.50
-•	Standard Deviation: $141,586.75
-The standard deviation is lower in both variables which suggests less variability in the data. This Basically means the data points are more clustered around the average value. When the standard deviation is lower, it means that the values in the data set are closer to the mean (average) and there is less spread around the mean. 
-Variability refers to the extent to which data points in a dataset differ from each other or from the average (mean) value. Variability is a measure of the spread, dispersion, or range of a set of values. It provides information about how much individual data points deviate from the central tendency of the data.
-
-
-
-# Trend Analysis
-
- 
-![Median Sales Prices_plot](https://github.com/Ishicka/The-Seven/assets/148410176/a4377d01-bbd4-46b4-b00c-723d08328f1f)
-
-
-
-The plot reviews the Median list price versus the Median sale price for California ,Texas and Kansas.  There is an upward trend in both the sales and listing price for each state being reviewed. Specifically in California the plot reflects that buyers are paying less than the Median list price hence, the time period being analyzed draws the conclusion that they are in the buyers market.Buyer's market means that the demand for houses are less than the actual supply which creates negotiation power. Kansas on the other hand shows a multiple overlaps in 2021 and 2022 reflecting a possible shift in the market from buyers to sellers’ market .
-
-
-
-
-# Correlation Analysis:
+The next image shows a linear regression of MLP and MSP. Visually, it is clear there is a strong positive correlation and this is confirmed by the R^2 value of 0.79. This indicates that when the median list price of homes increases, the median sale price also tends to increase, and vice versa. When sellers perceive that the market is strong and property values are high, they may list their homes at higher prices. If buyers are willing to pay those prices, it results in higher median sale prices. Conversely, in a weaker market, sellers may be more inclined to lower their list prices, leading to lower median sale prices.
 
 ![Scatter Plot of MLP vs MSP_plot](https://github.com/Ishicka/The-Seven/assets/148410176/f7d15490-e17e-4d92-be31-4a0e1f419cfb)
 
+The plot reviews the Median list price versus the Median sale price for California ,Texas and Kansas.  There is an upward trend in both the sales and listing price for each state being reviewed. Specifically in California the plot reflects that buyers are paying less than the Median list price hence, the time period being analyzed draws the conclusion that they are in the buyers market.Buyer's market means that the demand for houses are less than the actual supply which creates negotiation power. Kansas on the other hand shows a multiple overlaps in 2021 and 2022 reflecting a possible shift in the market from buyers to sellers’ market.
  
-•	Linear Regression: y = 0.79x + 12647.59
-•	Correlation Coefficient: 0.96
-•	A strong positive correlation - indicates that when the median list price of homes increases, the median sale price also tends to increase, and vice versa. In other words, there is a consistent pattern of both list prices and sale prices moving in the same direction as reflected in the graph.
-•	This correlation is often observed in real estate markets. When sellers perceive that the market is strong and property values are high, they may list their homes at higher prices. If buyers are willing to pay those prices, it results in higher median sale prices. Conversely, in a weaker market, sellers may be more inclined to lower their list prices, leading to lower median sale prices.
-•	It's important to note that correlation does not imply causation. While there may be a strong statistical relationship between these two variables, other factors could influence both list and sale prices independently. 
+![Median Sales Prices_plot](https://github.com/Ishicka/The-Seven/assets/148410176/a4377d01-bbd4-46b4-b00c-723d08328f1f)
 
-# Economic Factors
+## Economic Factors
+The initial analysis suggests a limited correlation between HAI and the housing market trends. Further, we will examine the correlation with home sales volume. Housing prices, as we know, are influenced by a plethora of economic indicators, including inflation, employment rates, GDP growth, consumer confidence, and notably, interest rates. The below graphic displays the total home sales in the U.S. juxtaposed with national mortgage interest rates over time. This graph suggests an inverse relationship between these two factors. The impact of interest rates on housing prices is particularly nuanced. While initially lower interest rates may stimulate demand and increase prices, excessively low rates can lead to economic instability, subsequently affecting housing prices in unexpected ways. An investigation into government policies and economic trends, beginning with the 2008 Housing Bubble, can illustrate this.
+
 ![image](https://github.com/Ishicka/The-Seven/assets/148410176/bce3d5d4-8935-48ef-b77e-52f651b2bd84)
 
+During this period, high home prices, speculative buying, and risky lending practices led to a dramatic market downturn and a significant drop in property values. Following the crisis, the 2009-2012 Post-Recession Recovery phase witnessed efforts by the federal government to stabilize the market. Initiatives like the Home Affordable Modification Program (HAMP) and the First-Time Homebuyer Credit were introduced. The subsequent Recovery and Growth phase (2013-2019) saw the housing market benefit from lower interest rates, job market improvements, and growing consumer confidence, especially in metropolitan areas.
+The COVID-19 pandemic initially brought uncertainty to the housing market, with some areas experiencing a slowdown. However, the shift towards remote work and record-low mortgage rates eventually led to increased demand for suburban and rural properties, driving up home buying activity. Currently, the market is experiencing a significant downturn in home sales, a trend not seen in the past decade, attributed to high interest rates and factors like inflation and economic conditions.
 
+The next chart presents a scatter plot comparing average MSP with mortgage rates, revealing a slight positive correlation (R^2 value of 0.01). This finding reinforces the notion that while these factors are interrelated, they do not reliably predict each other. It underscores the complexity of the housing market, influenced by a multitude of variables, including those broader economic indicators mentioned earlier.
 
+# Issues & Findings
+In summary, the housing market is unique due to its cyclical nature, local variations, sensitivity to interest rates, and long-term investment characteristics. While it is influenced by economic factors, its behavior can be somewhat insulated, and the market may lag behind or follow its own trajectory compared to other sectors of the economy. The interconnectedness of economic indicators and demographic trends makes predicting the housing market's movements a complex task.  From this, it is concluded that the overall relationship between the housing market, the HAI, and the economy likely has a nonlinear correlation.
+Nonlinearity implies that the relationship between housing prices and economic indicators is not proportional or straightforward. Changes in economic indicators may not result in linear changes in housing prices. Instead, the connection may be characterized by curves, thresholds, or other non-linear patterns. Interest rates, for example, can have a nonlinear impact on housing prices. Initially, lower interest rates may stimulate demand and increase prices, but excessively low rates may lead to economic instability, affecting housing prices in unexpected ways. Behavioral economics also plays a role. Buyer sentiment, perceptions of the market, and speculative behavior can introduce nonlinearities into the housing price dynamics.
 
-The initial analysis indicates a modest correlation between HAI and overall housing market trends, with a particular focus on the relationship between home sales volume and various economic factors. Notably, housing prices are influenced by a range of economic indicators such as inflation, employment rates, GDP growth, and consumer confidence, with interest rates playing a complex role. An inverse relationship between home sales and mortgage interest rates is observed, highlighting that while lower interest rates can boost demand and prices, too low rates may lead to economic instability and unpredictably impact housing prices. Historical events, including the 2008 Housing Bubble and its aftermath, the post-recession recovery efforts, and the recent COVID-19 pandemic, have significantly influenced the market. These events demonstrate the housing market's sensitivity to broader economic and policy changes. Despite some correlations, as shown in the data, the housing market's complexity and the multitude of influencing factors make it challenging to predict trends reliably.
-
-#Overall Points 
-
-# Next Steps:
-Potential next steps for the project include:
-
-Incorporating more granular data (e.g., regional or city-specific data).
-Analyzing the impact of other economic indicators.
-Building predictive models for housing market trends.
-Collaborating with industry experts for a more nuanced analysis.
-In summary, this project offers valuable insights into the housing market, aiding stakeholders in making informed decisions. Continued refinement and expansion of the analysis will enhance its applicability and usefulness in the real estate industry.
-
+# Next Steps
+Information gained from this project could serve as a jumping off point for further exploration with more detailed or larger datasets. This could involve Incorporating more granular data or new variables. As previously discussed, economic policy and government intervention may impact the housing market. Expanding the analysis to include government policies could further illustrate this. Additionally, a field as large and far reaching as the housing market attracts many professionals looking to forecast future trends. Aggregating and comparing these ideas would be an interesting area to explore. All this information could ultimately be used to create a predictive model for housing market trends.
