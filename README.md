@@ -65,7 +65,7 @@ For Median Sale Price:
 •	Mean (Average): $236,321.50
 •	Standard Deviation: $141,586.75
 The standard deviation is lower in both variables which suggests less variability in the data. This Basically means the data points are more clustered around the average value. When the standard deviation is lower, it means that the values in the data set are closer to the mean (average) and there is less spread around the mean. 
-Variability refers to the extent to which data points in a dataset differ from each other or from the average (mean) value. In statistics, variability is a measure of the spread, dispersion, or range of a set of values. It provides information about how much individual data points deviate from the central tendency of the data.
+Variability refers to the extent to which data points in a dataset differ from each other or from the average (mean) value. Variability is a measure of the spread, dispersion, or range of a set of values. It provides information about how much individual data points deviate from the central tendency of the data.
 
 
 
