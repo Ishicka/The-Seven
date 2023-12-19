@@ -48,7 +48,7 @@ Box plots visually represent the distribution of data and identify outliers. Out
 
 
 
-# Price Distribution – Kernel Density distribution map 
+# Price Distribution – Kernel Density Distribution
 
  
 
