@@ -47,6 +47,9 @@ Housing prices are greatly influenced by the balance between supply and demand. 
 
 The overlaid plot shows the distributions of the median sale price (in blue) and the median list price (in orange) within the same graph. This visualization allows for a direct comparison between the two distributions, highlighting similarities and differences in their frequency and range.
 
+<img width="418" alt="Screenshot 2023-12-18 213036" src="https://github.com/Ishicka/The-Seven/assets/52751074/b1e3ffa4-f45c-443a-baa0-b4ce1ab8f6a2">
+
+
 The summary statistics you provided represent the central tendency (mean) and variability (standard deviation) of Median List Price and Median Sale Price. 
 For Median List Price:
 •	Mean (Average): $278,590.74
@@ -56,6 +59,8 @@ For Median Sale Price:
 •	Standard Deviation: $141,586.75
 The standard deviation is lower in both variables which suggests less variability in the data. This Basically means the data points are more clustered around the average value. When the standard deviation is lower, it means that the values in the data set are closer to the mean (average) and there is less spread around the mean. 
 Variability refers to the extent to which data points in a dataset differ from each other or from the average (mean) value. In statistics, variability is a measure of the spread, dispersion, or range of a set of values. It provides information about how much individual data points deviate from the central tendency of the data.
+
+<img width="417" alt="Screenshot 2023-12-18 214227" src="https://github.com/Ishicka/The-Seven/assets/52751074/a905f84e-1ac8-46af-8f84-1d5b7381ccb0">
 
 
 # Trend Analysis
