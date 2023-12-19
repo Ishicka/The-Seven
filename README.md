@@ -1,3 +1,4 @@
+![Linear Regression of Average Median Sale Price vs Mortgage Interest Rate](https://github.com/Ishicka/The-Seven/assets/102836930/14c91ec4-7beb-4c6c-a9c8-f1cc717594d3)
 # Project Title: Analyzing the Housing Market and Economic factors
 # Project Goals
 The goal of this project is to explore housing markets in the United States through the lens of housing affordability and economic measures. Metrics to represent the state of the housing market are median house prices (including list and sales price) and number of homes sold. Economic factors include median household income, unemployment, and the national mortgage interest rate set by Freddie Mac. The datasets will also be confined to the period between 2009 and 2022 and were by metropolitan area. The specific questions to be addressed are the following:
