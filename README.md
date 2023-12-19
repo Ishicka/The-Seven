@@ -1,4 +1,4 @@
-![Linear Regression of Average Median Sale Price vs Mortgage Interest Rate](https://github.com/Ishicka/The-Seven/assets/102836930/14c91ec4-7beb-4c6c-a9c8-f1cc717594d3)
+
 # Project Title: Analyzing the Housing Market and Economic factors
 # Project Goals
 The goal of this project is to explore housing markets in the United States through the lens of housing affordability and economic measures. Metrics to represent the state of the housing market are median house prices (including list and sales price) and number of homes sold. Economic factors include median household income, unemployment, and the national mortgage interest rate set by Freddie Mac. The datasets will also be confined to the period between 2009 and 2022 and were by metropolitan area. The specific questions to be addressed are the following:
@@ -30,7 +30,7 @@ The next visualization shows a linear regression of the number of homes sold and
 
 ![Linear Regression of Housing Affordability Index vs Total Sales](https://github.com/Ishicka/The-Seven/assets/102836930/0c905f88-1542-428a-8f77-f0c1a7f0bcc0)
 
-
+![Linear Regression of Average Median Sale Price vs Mortgage Interest Rate](https://github.com/Ishicka/The-Seven/assets/102836930/14c91ec4-7beb-4c6c-a9c8-f1cc717594d3)
 ## MLP & MSP
 When a house is put on the market, the price it is initially listed as and its final selling price are often different. These are referred to as the Median List Price (MLP) and Median Sales Price (MSP) when discussing the housing market of a particular area. When there is a trend of homes selling below asking price, it can be assumed that they are in a “Buyer’s Market,” meaning the supply of homes outweighs the demand. A “Seller’s Market” is the reverse, where there are not enough homes to meet demand and buyers must compete over the same properties.
 Analyzing the Housing  market using median list price and median sale price involves exploring various aspects of the data. Using the classic supply-and-demand model, demand refers to the MSP, as it signifies the willingness of buyers to pay for housing. Supply corresponds to the MLP as it reflects the availability of housing stock in the U.S. market. In a seller's market with high demand and limited supply, sellers may list properties at a lower price to attract multiple offers, leading to a higher sale price. In a buyer's market with ample supply and low demand, sellers may initially list properties at higher prices, but due to the competitive nature of the market, they may have to reduce prices to close a deal.
