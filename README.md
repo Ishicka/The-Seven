@@ -43,6 +43,11 @@ Housing prices are greatly influenced by the balance between supply and demand. 
 ![Boxplot Outliers_plot](https://github.com/Ishicka/The-Seven/assets/148410176/5383b42c-c602-4d23-adb3-305ac12d3d80)
 
 
+Box plots visually represent the distribution of data and identify outliers. Outliers are the points that fall beyond the "whiskers" of the box plot. Based on the context of our study, the nature of the data, and the goals of your analysis keeping the outliers is beneficial as they essential for understanding the phenomena being studied. A sample of the outlier was reviewed and all the regions listed are expected to have higher house Prices
+
+
+
+
 # Price Distribution – Kernel Density distribution map 
 
  
