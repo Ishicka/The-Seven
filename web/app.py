@@ -8,10 +8,10 @@ import base64
 app = Flask(__name__)
 
 # Load your data
-data = pd.read_csv('/path/to/your/data_interpolated.csv')
+data = pd.read_csv('data/data_interpolated.csv')
 
 # Load the US States Shapefile
-shapefile_path = '/path/to/your/us_states_shapefile/cb_2021_us_state_20m.shp'
+shapefile_path = 'data/us_states_shapefile/cb_2021_us_state_20m.shp'
 us_states_map = gpd.read_file(shapefile_path)
 us_states_map = us_states_map.rename(columns={'STUSPS': 'StateName'})
 
