@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')  # Set the matplotlib backend to 'Agg' to avoid GUI issues on macOS
+
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
 import geopandas as gpd
@@ -29,7 +32,7 @@ def update_plot():
     
     # Merge and plot
     merged_map_data = us_states_map.merge(average_hai_per_state, on='StateName', how='left')
-    fig, ax = plt.subplots(1, 1, figsize=(15, 10))
+    fig, ax = plt.subplots(1, figsize=(15, 10))
     merged_map_data.plot(column='HAI', ax=ax, legend=True, cmap='OrRd', edgecolor='black', linewidth=0.3)
     plt.axis('off')
     img = io.BytesIO()
