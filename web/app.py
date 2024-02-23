@@ -13,6 +13,9 @@ app = Flask(__name__)
 # Load your data
 data = pd.read_csv('data/data_interpolated.csv')
 
+# Ensure the data 'Date' column is in the proper datetime format
+data['Date'] = pd.to_datetime(data['Date'])
+
 # Load the US States Shapefile
 shapefile_path = 'data/us_states_shapefile/cb_2021_us_state_20m.shp'
 us_states_map = gpd.read_file(shapefile_path)
@@ -20,14 +23,14 @@ us_states_map = us_states_map.rename(columns={'STUSPS': 'StateName'})
 
 @app.route('/')
 def index():
-    # Extract unique dates for dropdown
-    unique_dates = data['Date'].sort_values().unique().tolist()
+    # Extract unique dates for dropdown, formatted as strings for easy handling in HTML/JS
+    unique_dates = data['Date'].dt.strftime('%Y-%m-%d').sort_values().unique().tolist()
     return render_template('index.html', dates=unique_dates)
 
 @app.route('/update_plot', methods=['POST'])
 def update_plot():
     selected_date = request.form['selected_date']
-    filtered_data = data[data['Date'] == selected_date]
+    filtered_data = data[data['Date'] == pd.to_datetime(selected_date)]
     average_hai_per_state = filtered_data.groupby('StateName')['HAI'].mean().reset_index()
     
     # Merge and plot
