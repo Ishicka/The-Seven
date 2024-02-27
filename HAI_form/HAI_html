@@ -1,0 +1,30 @@
+<form id="affordability-form">
+    <label for="income">Income:</label>
+    <input type="number" id="income" name="income" required>
+    <!-- Other input fields for expenses, location, etc. -->
+
+    <button type="submit">Calculate Affordability</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+    document.getElementById("affordability-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Gather user inputs
+        const formData = new FormData(this);
+
+        // Send data to Flask backend
+        fetch("/calculate-affordability", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display result to the user
+            document.getElementById("result").innerText = `Housing Affordability Index: ${data.affordabilityIndex}`;
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
