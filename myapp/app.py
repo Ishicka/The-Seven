@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from myapp.heatmap import plot_housing_affordability
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -14,7 +14,10 @@ def home():
 
 @app.route('/plot/<int:year>')
 def plot(year):
-    return plot_housing_affordability(year)
+    # Generate the heatmap and get the file path
+    plot_housing_affordability(year)
+    # Serve the heatmap image
+    return send_from_directory('static', 'heatmap.png')
 
 if __name__ == '__main__':
     app.run(debug=True)
